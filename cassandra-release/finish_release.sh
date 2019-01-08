@@ -143,7 +143,7 @@ cd $artifacts_svn_dir
 mkdir $release_short
 cd $release_short
 for type in bin src; do
-    for part in gz gz.md5 gz.sha1 gz.asc gz.asc.md5 gz.asc.sha1; do
+    for part in gz gz.sha256 gz.sha512 gz.asc gz.asc.sha256 gz.asc.sha512; do
         echo "Downloading apache-cassandra-${release}-$type.tar.$part..." 1>&3 2>&4
         curl -O https://repository.apache.org/content/repositories/orgapachecassandra-${staging_number}/org/apache/cassandra/apache-cassandra/${release}/apache-cassandra-${release}-$type.tar.$part
     done
